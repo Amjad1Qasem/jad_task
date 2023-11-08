@@ -1,0 +1,15 @@
+{
+    "home":"Home",
+    "sale":"Sale",
+    "category":"Category",
+    "cart":"Cart",
+    "profile":"Profile",
+    "search":"Search",
+    "viewAll":"View all",
+    "newProduct":"New Product",
+    "addtoCart":"Add to Cart",
+    "bestSeller":"Best seller",
+    "buffet":"Buffet",
+    "cutlery":"Cutlery"
+
+}
