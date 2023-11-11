@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jad/bloc/BottomNavBar/bottom_nav_bar_cubit.dart';
+import 'package:jad/bloc/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import 'package:jad/components/bottom_nav_bar.dart';
 import 'package:jad/components/default_scaffold.dart';
 import 'package:jad/constants/app_images.dart';
@@ -42,8 +42,7 @@ class HomeLayout extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsetsDirectional.only(end: 5.sp),
                               child: InkWell(
-                                // ignore: avoid_print
-                                onTap: () => print('Search'),
+                                onTap: () {},
                                 child: Stack(
                                   alignment: AlignmentDirectional.centerEnd,
                                   children: [
@@ -120,7 +119,8 @@ class HomeLayout extends StatelessWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
-                                      ?.copyWith(color: Colors.white),
+                                      ?.copyWith(
+                                          fontSize: 12, color: Colors.white),
                                 ),
                               )
                             ],
@@ -136,12 +136,14 @@ class HomeLayout extends StatelessWidget {
   }
 
   Widget getBody(BottomNavBarState state) => state is HomeState
-      ? HomeScreen()
+      ? const HomeScreen()
       : state is SaleState
           ? const SaleScreen()
           : state is CategoryState
               ? const CategoryScreen()
               : state is CartState
-                  ? const CartScreen()
+                  ? const CartScreen(
+                      hasBackButton: false,
+                    )
                   : const ProfileScreen();
 }

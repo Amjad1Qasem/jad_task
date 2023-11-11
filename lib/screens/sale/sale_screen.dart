@@ -5,8 +5,11 @@ class SaleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber[400],
+    return Center(
+      child: Text(
+        'Sale Screen',
+        style: Theme.of(context).textTheme.bodyLarge,
+      ),
     );
   }
 }

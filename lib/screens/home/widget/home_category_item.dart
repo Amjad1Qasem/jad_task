@@ -24,9 +24,9 @@ class HomeCategoryItem extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: colors.categoryBgColor),
                 borderRadius: BorderRadius.circular(50)),
-            child: Image.asset(
+            child: Image.network(
               model.image,
-              fit: BoxFit.contain,
+              fit: BoxFit.fill,
               width: 70,
               height: 60,
             ),

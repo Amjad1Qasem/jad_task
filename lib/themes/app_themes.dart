@@ -18,6 +18,9 @@ abstract class AppThemes {
           onTertiary: AppColors.lightGreen,
           primaryContainer: AppColors.aqua,
           onPrimaryContainer: AppColors.red,
+          onTertiaryContainer: AppColors.secondred,
+          surface: AppColors.grey,
+          onSurface: AppColors.lightgrey,
           onSecondaryContainer: AppColors.aqua),
       textTheme: TextTheme(
         bodyMedium: GoogleFonts.lato(
@@ -29,7 +32,7 @@ abstract class AppThemes {
         ),
         bodySmall: GoogleFonts.lato(
           textStyle: TextStyle(
-            fontSize: 12.sp,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w400,
             color: AppColors.primaryGreen,
           ),
@@ -76,11 +79,25 @@ abstract class AppThemes {
             color: AppColors.white,
           ),
         ),
+        displayMedium: GoogleFonts.lato(
+          textStyle: TextStyle(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w700,
+            color: AppColors.primaryGreen,
+          ),
+        ),
         displayLarge: GoogleFonts.lato(
           textStyle: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w700,
             color: AppColors.navyBlue,
+          ),
+        ),
+        titleLarge: GoogleFonts.lato(
+          textStyle: TextStyle(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
+            color: AppColors.primaryBlue,
           ),
         ),
       ),

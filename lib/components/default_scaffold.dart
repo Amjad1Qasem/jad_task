@@ -4,19 +4,16 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 class DefaultScaffold extends HookWidget {
   const DefaultScaffold({
     super.key,
-    required this.body,
     this.appBar,
+    required this.body,
     this.drawer,
     this.bottomNavigation,
     this.resizeToAvoidBottomInset = false,
   });
 
-  final Widget body;
-
-  final Widget? drawer;
-
   final AppBar? appBar;
-
+  final Widget body;
+  final Widget? drawer;
   final Widget? bottomNavigation;
   final bool resizeToAvoidBottomInset;
 

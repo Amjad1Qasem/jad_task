@@ -10,7 +10,9 @@ abstract class AppColors {
   static const lightGreen = Color(0xff76A78E);
   static const aqua = Color(0xffd9ffeb);
   static const red = Color(0xffE93B3B);
+  static const secondred = Color(0xffFF4E4E);
   static const grey = Color(0xff363636);
+  static const lightgrey = Color(0xffd6d6d6);
   static const navyBlue = Color(0xff396788);
   static final backgroundGradientcategory = [
     const Color(0xff0AA957).withOpacity(0.1),

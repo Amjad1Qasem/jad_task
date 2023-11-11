@@ -5,8 +5,11 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(255, 40, 133, 255),
+    return Center(
+      child: Text(
+        'Category Screen',
+        style: Theme.of(context).textTheme.bodyLarge,
+      ),
     );
   }
 }

@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jad/model/cart.dart';
 import 'package:jad/screens/cart/cart_screen.dart';
 import 'package:jad/screens/details/details_product.dart';
 import 'package:jad/screens/home/home_screen.dart';
 import 'package:jad/screens/layout/home_layout.dart';
+import 'package:jad/screens/order.dart/order_screen.dart';
 
 class AppRouter {
   static const homeScreen = '/home';
   static const cartScreen = '/cart';
   static const homeLayout = '/homeLayout';
-   static const detailsScreen = '/detailsScreen';
+  static const detailsScreen = '/detailsScreen';
+  static const orderScreen = '/orderScreen';
   static final navigatorKey = GlobalKey<NavigatorState>();
 
   static Route onGenerateRoute(RouteSettings settings) {
@@ -20,10 +23,13 @@ class AppRouter {
         route = CupertinoPageRoute(builder: (_) => const HomeLayout());
         break;
       case AppRouter.homeScreen:
-        route = CupertinoPageRoute(builder: (_) =>  HomeScreen());
+        route = CupertinoPageRoute(builder: (_) => HomeScreen());
         break;
       case AppRouter.cartScreen:
-        route = CupertinoPageRoute(builder: (_) => const CartScreen());
+        route = CupertinoPageRoute(builder: (_) => CartScreen());
+        break;
+      case AppRouter.orderScreen:
+        route = CupertinoPageRoute(builder: (_) => const OrderScreen());
         break;
       case AppRouter.detailsScreen:
         final productName = settings.arguments as String;
@@ -33,7 +39,7 @@ class AppRouter {
                 ));
         break;
       default:
-        route = CupertinoPageRoute(builder: (_) =>  HomeScreen());
+        route = CupertinoPageRoute(builder: (_) => const HomeLayout());
     }
     return route;
   }

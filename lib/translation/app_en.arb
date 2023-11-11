@@ -10,6 +10,23 @@
     "addtoCart":"Add to Cart",
     "bestSeller":"Best seller",
     "buffet":"Buffet",
-    "cutlery":"Cutlery"
+    "cutlery":"Cutlery",
+    "description":"Description",
+    "recommended":"Recommended",
+    "favorait":"Favorait",
+    "buyNow":"Buy Now",
+    "addNote":"Add note",
+    "moreToLove":"More to love",
+    "orderConfirmation":"Order Confirmation",
+    "total":"Total:",
+    "placeOrder":"Place order",
+    "checkout":"Checkout",
+    "shippingAdddress":"Shipping adddress",
+    "summary":"Summary",
+    "totalCosts":"Total item costs",
+    "promoCode":"Promo code",
+    "deliveryFees":"Delivery fees",
+    "totalShipping":"Total shipping",
+    "summary":"Summary"
 
 }

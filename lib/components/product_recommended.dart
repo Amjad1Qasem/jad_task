@@ -1,30 +1,33 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jad/bloc/apis/details/details_cubit.dart';
 import 'package:jad/constants/app_images.dart';
-import 'package:jad/model/cart.dart';
 import 'package:jad/model/product_item.dart';
 import 'package:jad/router/app_router.dart';
 import 'package:jad/utilities/navigation.dart';
 import 'package:jad/utilities/translation.dart';
 
-class ProductItem extends StatelessWidget {
-  ProductItem({
-    super.key,
-    required this.model,
-  });
+class ProductecommendedItem extends StatelessWidget {
+  ProductecommendedItem({super.key, required this.model});
   ProductModel model;
-
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.sp),
-      child: Row(
-        children: [
-          GestureDetector(
+    return BlocProvider(
+      create: (context) => DetailsCubit(),
+      child: Builder(builder: (context) {
+        final state = context.watch<DetailsCubit>().state;
+        if (state is! DetailsSuccessed) {
+          return const CircularProgressIndicator();
+        }
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.sp),
+          child: GestureDetector(
             onTap: () {
-              context.goNamed(AppRouter.detailsScreen, argument: (model.name));
+              context.goNamed(AppRouter.detailsScreen,
+                  argument: (model.name));
             },
             child: Container(
                 width: 165.w,
@@ -51,15 +54,14 @@ class ProductItem extends StatelessWidget {
                       alignment: AlignmentDirectional.topEnd,
                       children: [
                         Container(
-                          padding: EdgeInsets.all(5.sp),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: Image.network(
-                            model.image,
+                            state.details.recommended[7] as String,
                             fit: BoxFit.fill,
                             width: 165.w,
-                            height: 100.h,
+                            height: 110.h,
                           ),
                         ),
                         Row(
@@ -87,7 +89,7 @@ class ProductItem extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            if (model.currentPrice < model.oldPrice)
+                            if (state.details.recommended[1].currentPrice < state.details.recommended[1].oldPrice)
                               Container(
                                 alignment: Alignment.center,
                                 width: 65.w,
@@ -124,17 +126,17 @@ class ProductItem extends StatelessWidget {
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          if (model.currentPrice == model.oldPrice)
+                          if (state.details.recommended[3] == state.details.recommended[4])
                             Text(
-                              '\$ ${model.oldPrice}',
+                              '\$ ${state.details.recommended[1].oldPrice}',
                               style: Theme.of(context).textTheme.labelSmall,
                             )
-                          else if (model.currentPrice < model.oldPrice)
+                          else if (state.details.recommended[1].currentPrice < state.details.recommended[1].oldPrice)
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  '\$ ${model.oldPrice}',
+                                  '\$ ${state.details.recommended[1].oldPrice}',
                                   style: TextStyle(
                                       decoration: TextDecoration.lineThrough,
                                       color: Colors.grey,
@@ -144,7 +146,7 @@ class ProductItem extends StatelessWidget {
                                   width: 12.w,
                                 ),
                                 Text(
-                                  '\$ ${model.currentPrice}',
+                                  '\$ ${state.details.recommended[1].category}',
                                   style: Theme.of(context).textTheme.labelSmall,
                                 ),
                               ],
@@ -171,8 +173,8 @@ class ProductItem extends StatelessWidget {
                   ],
                 )),
           ),
-        ],
-      ),
+        );
+      }),
     );
   }
 }

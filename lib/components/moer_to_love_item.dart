@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jad/constants/app_images.dart';
 import 'package:jad/model/cart.dart';
-import 'package:jad/model/product_item.dart';
 import 'package:jad/router/app_router.dart';
 import 'package:jad/utilities/navigation.dart';
 import 'package:jad/utilities/translation.dart';
 
-class ProductItem extends StatelessWidget {
-  ProductItem({
+class MoreToLoveItem extends StatelessWidget {
+  MoreToLoveItem({
     super.key,
     required this.model,
   });
-  ProductModel model;
+  CartModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -87,25 +86,6 @@ class ProductItem extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            if (model.currentPrice < model.oldPrice)
-                              Container(
-                                alignment: Alignment.center,
-                                width: 65.w,
-                                height: 15.h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadiusDirectional.only(
-                                      topStart: const Radius.circular(0),
-                                      topEnd: Radius.circular(10.sp)),
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onPrimaryContainer,
-                                ),
-                                child: Text(
-                                  translation(context).sale,
-                                  style:
-                                      Theme.of(context).textTheme.displaySmall,
-                                ),
-                              ),
                           ],
                         )
                       ],
@@ -124,33 +104,10 @@ class ProductItem extends StatelessWidget {
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          if (model.currentPrice == model.oldPrice)
                             Text(
-                              '\$ ${model.oldPrice}',
+                              '\$ ${model.price}',
                               style: Theme.of(context).textTheme.labelSmall,
-                            )
-                          else if (model.currentPrice < model.oldPrice)
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  '\$ ${model.oldPrice}',
-                                  style: TextStyle(
-                                      decoration: TextDecoration.lineThrough,
-                                      color: Colors.grey,
-                                      fontSize: 15.sp),
-                                ),
-                                SizedBox(
-                                  width: 12.w,
-                                ),
-                                Text(
-                                  '\$ ${model.currentPrice}',
-                                  style: Theme.of(context).textTheme.labelSmall,
-                                ),
-                              ],
-                            )
-                          else
-                            const Text('Pleas Confirm from your price'),
+                            ),
                           GestureDetector(
                             onTap: () {},
                             child: Row(
