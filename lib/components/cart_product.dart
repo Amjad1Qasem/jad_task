@@ -173,7 +173,6 @@ class CartProduct extends HookWidget {
                                     onTap: () {
                                       if (count.value > 1) {
                                         count.value--;
-                                        print(count.value);
                                         onChanged(count.value);
                                       }
                                     },

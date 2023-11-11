@@ -15,7 +15,6 @@ abstract class ApiController {
         'accept': 'application/json',
       },
     );
-    print(response.body);
     return (jsonDecode(response.body)['Home_banner'] as List)
         .map((json) => HomeBannerModel.fromJson(json))
         .toList();
@@ -28,7 +27,6 @@ abstract class ApiController {
         'accept': 'application/json',
       },
     );
-    print(response.body);
     return (jsonDecode(response.body)['Home_Category'] as List)
         .map((json) => HomeCategoryModel.fromJson(json))
         .toList();
@@ -41,7 +39,6 @@ abstract class ApiController {
         'accept': 'application/json',
       },
     );
-    print(response.body);
     return jsonDecode(response.body);
   }
 
@@ -52,7 +49,6 @@ abstract class ApiController {
         'accept': 'application/json',
       },
     );
-    print(response.body);
     return ProductModel.fromJson(
         (jsonDecode(response.body) as Map<String, dynamic>));
   }
@@ -64,7 +60,6 @@ abstract class ApiController {
         'accept': 'application/json',
       },
     );
-    print(response.body);
     return (jsonDecode(response.body)['Home_All'] as List)
         .map((json) => ProductModel.fromJson(json))
         .toList();

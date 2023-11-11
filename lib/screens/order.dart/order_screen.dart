@@ -5,7 +5,6 @@ import 'package:jad/bloc/apis/cart/cart_cubit.dart' hide cartItems;
 import 'package:jad/components/cart_product.dart';
 import 'package:jad/components/default_scaffold.dart';
 import 'package:jad/constants/app_images.dart';
-import 'package:jad/router/app_router.dart';
 import 'package:jad/utilities/navigation.dart';
 import 'package:jad/utilities/translation.dart';
 
@@ -55,27 +54,6 @@ class OrderScreen extends StatelessWidget {
                           translation(context).total,
                           style: Theme.of(context).textTheme.labelMedium,
                         ),
-                        // Builder(builder: (context) {
-                        //   final state = context.watch<CartCubit>();
-                        //   int sum = 0;
-                        //   if (state is CartSuccessed) {
-                        //     state.cartItems
-                        //         .map((e) => e.price * e.quantity)
-                        //         .forEach((element) {
-                        //       sum += element;
-                        //     });
-                        //   } else if (state is CartChanged) {
-                        //     state.cartItems
-                        //         .map((e) => e.price * e.quantity)
-                        //         .forEach((element) {
-                        //       sum += element;
-                        //     });
-                        //   }
-                        //   return Text(
-                        //     'US \$ ${sum.toString()}',
-                        //     style: Theme.of(context).textTheme.labelMedium,
-                        //   );
-                        // })
                         BlocBuilder<CartCubit, CartState>(
                           builder: (context, state) {
                             int sum = 0;

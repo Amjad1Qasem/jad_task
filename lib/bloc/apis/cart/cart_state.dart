@@ -21,7 +21,6 @@ final class CartLoading extends CartState {
 }
 
 final class CartSuccessed extends CartState {
-  // final Map<String,dynamic> carts;
   final List<CartModel> cartItems;
   final List<CartModel> moreToLoveItems;
 

@@ -1,5 +1,6 @@
-import 'dart:convert';
+// ignore_for_file: depend_on_referenced_packages
 
+import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:jad/controller/api_controller.dart';

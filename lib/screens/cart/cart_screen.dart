@@ -5,7 +5,6 @@ import 'package:jad/bloc/apis/cart/cart_cubit.dart';
 import 'package:jad/components/cart_product.dart';
 import 'package:jad/components/default_scaffold.dart';
 import 'package:jad/components/moer_to_love_item.dart';
-import 'package:jad/components/product_item.dart';
 import 'package:jad/router/app_router.dart';
 import 'package:jad/utilities/navigation.dart';
 import 'package:jad/utilities/translation.dart';

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jad/bloc/apis/cart/cart_cubit.dart' hide CartState;
 import 'package:jad/bloc/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import 'package:jad/constants/app_images.dart';
-import 'package:jad/model/cart.dart';
 import 'package:jad/router/app_router.dart';
 import 'package:jad/utilities/navigation.dart';
 import 'package:jad/utilities/translation.dart';
@@ -12,7 +11,6 @@ import 'package:jad/utilities/translation.dart';
 class BottomNavBarItem extends StatelessWidget {
   const BottomNavBarItem({
     super.key,
-    // required this.model
   });
 
   int calcTotal(state) {

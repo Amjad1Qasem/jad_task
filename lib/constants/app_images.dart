@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 
 abstract class AppImages {
   static const _imagePath = 'assets/images';

@@ -14,49 +14,6 @@ import 'package:jad/utilities/translation.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  // List<ProductModel> listProductModel = [
-  //   ProductModel(
-  //       id: 1,
-  //       name: "Office Desk",
-  //       description:
-  //           "Excepteur sint occaecat cupidatat non proident, sunt in cu",
-  //       oldPrice: 202,
-  //       currentPrice: 180,
-  //       category: "OFFICE FURNI",
-  //       image: AppImages.product1,
-  //       recommended: []),
-  //   ProductModel(
-  //       id: 1,
-  //       name: "Office Desk",
-  //       description:
-  //           "Excepteur sint occaecat cupidatat non proident, sunt in cu",
-  //       oldPrice: 202,
-  //       currentPrice: 180,
-  //       category: "OFFICE FURNI",
-  //       image: AppImages.product1,
-  //       recommended: []),
-  //   ProductModel(
-  //       id: 1,
-  //       name: "Office Desk",
-  //       description:
-  //           "Excepteur sint occaecat cupidatat non proident, sunt in cu",
-  //       oldPrice: 202,
-  //       currentPrice: 180,
-  //       category: "OFFICE FURNI",
-  //       image: AppImages.product1,
-  //       recommended: []),
-  //   ProductModel(
-  //       id: 1,
-  //       name: "Office Desk",
-  //       description:
-  //           "Excepteur sint occaecat cupidatat non proident, sunt in cu",
-  //       oldPrice: 202,
-  //       currentPrice: 180,
-  //       category: "OFFICE FURNI",
-  //       image: AppImages.product1,
-  //       recommended: []),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
@@ -140,18 +97,6 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(width: 0.0.w),
                       itemCount: state.products.length),
                 ),
-                //   ),
-                // SizedBox(
-                //   height: 190.h,
-                // child: ListView.separated(
-                //     scrollDirection: Axis.horizontal,
-                //     itemBuilder: (context, index) => ProductItem(
-                //           model: state.products[index],
-                //         ),
-                //     separatorBuilder: (context, index) =>
-                //         SizedBox(width: 0.0.w),
-                //     itemCount: state.products.length),
-                // ),
                 Column(children: [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.sp),

@@ -158,7 +158,6 @@ class DetailsProduct extends StatelessWidget {
                 return const Center(child: CircularProgressIndicator());
               } else {
                 return SingleChildScrollView(
-                  // physics: const NeverScrollableScrollPhysics(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,

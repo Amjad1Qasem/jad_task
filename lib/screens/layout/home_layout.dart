@@ -38,7 +38,6 @@ class HomeLayout extends StatelessWidget {
                         ),
                         Expanded(
                           child: SizedBox(
-                            // height: 60.h,
                             child: Padding(
                               padding: EdgeInsetsDirectional.only(end: 5.sp),
                               child: InkWell(

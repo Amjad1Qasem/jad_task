@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jad/model/cart.dart';
 import 'package:jad/screens/cart/cart_screen.dart';
 import 'package:jad/screens/details/details_product.dart';
 import 'package:jad/screens/home/home_screen.dart';
@@ -23,10 +22,10 @@ class AppRouter {
         route = CupertinoPageRoute(builder: (_) => const HomeLayout());
         break;
       case AppRouter.homeScreen:
-        route = CupertinoPageRoute(builder: (_) => HomeScreen());
+        route = CupertinoPageRoute(builder: (_) => const HomeScreen());
         break;
       case AppRouter.cartScreen:
-        route = CupertinoPageRoute(builder: (_) => CartScreen());
+        route = CupertinoPageRoute(builder: (_) => const CartScreen());
         break;
       case AppRouter.orderScreen:
         route = CupertinoPageRoute(builder: (_) => const OrderScreen());
